@@ -8,7 +8,7 @@
 #include "ocam_functions.h"
 
 //------------------------------------------------------------------------------
-int get_ocam_model(struct ocam_model *myocam_model, char *filename)
+int get_ocam_model(struct ocam_model *myocam_model, const char *filename)
 {
  double *pol        = myocam_model->pol;
  double *invpol     = myocam_model->invpol; 

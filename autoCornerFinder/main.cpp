@@ -31,7 +31,7 @@ If you use this code, please cite the following articles:
 #include <cstdlib>
 #include <iostream>
 
-#include <opencv.hpp>
+#include <opencv2/opencv.hpp>
 
 #include <stdio.h>
 #include <string.h>

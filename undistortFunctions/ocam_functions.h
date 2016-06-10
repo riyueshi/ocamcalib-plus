@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <float.h>
 #include <math.h>
-#include <cv.h>
+#include <opencv/cv.h>
 #include <highgui.h>
 
 
@@ -36,7 +36,7 @@ struct ocam_model
  This function reads the parameters of the omnidirectional camera model from 
  a given TXT file
 ------------------------------------------------------------------------------*/
-int get_ocam_model(struct ocam_model *myocam_model, char *filename);
+int get_ocam_model(struct ocam_model *myocam_model, const char *filename);
 
 /*------------------------------------------------------------------------------
  WORLD2CAM projects a 3D point on to the image

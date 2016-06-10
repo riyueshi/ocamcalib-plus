@@ -30,8 +30,8 @@ If you use this code, please cite the following articles:
 // CODE STARTS HERE
 //===========================================================================
 // Include files
-#include <opencv.hpp>
-#include <opencv2/core/internal.hpp>
+#include <opencv2/opencv.hpp>
+#include <opencv2/core/core_c.h>
 
 #include <time.h>
 #include <fstream>
@@ -159,7 +159,7 @@ int cvFindChessboardCorners3( const void* arr, CvSize pattern_size,
 	
 	// Set openCV function name and label the function start
     CV_FUNCNAME( "cvFindChessBoardCornerGuesses2" );
-    __BEGIN__;
+    __CV_BEGIN__;
 
 
 	// Further initializations
@@ -524,7 +524,7 @@ int cvFindChessboardCorners3( const void* arr, CvSize pattern_size,
 	// If enough corners have been found already, then there is no need for PART 2 ->EXIT
 	found = mrWriteCorners( output_quad_group, max_count, pattern_size, min_number_of_corners);
 		if (found == -1 || found == 1)
-			EXIT;
+			__CV_EXIT__;
 
 	// PART 2: AUGMENT LARGEST PATTERN
 	//-----------------------------------------------------------------------
@@ -756,7 +756,7 @@ int cvFindChessboardCorners3( const void* arr, CvSize pattern_size,
 				// Go to __END__, if enough corners have been found
 				found = mrWriteCorners( output_quad_group, max_count, pattern_size, min_number_of_corners);
 				if (found == -1 || found == 1)
-					EXIT;
+					__CV_EXIT__;
 			}
 		}
 	}
@@ -764,7 +764,7 @@ int cvFindChessboardCorners3( const void* arr, CvSize pattern_size,
 
 	// "End of file" jump point
 	// After the command "EXIT" the code jumps here
-    __END__;
+    __CV_END__;
 
 
 	/*
@@ -821,7 +821,7 @@ icvCleanFoundConnectedQuads( int quad_count, CvCBQuad **quad_group, CvSize patte
 
     CV_FUNCNAME( "icvCleanFoundConnectedQuads" );
 
-    __BEGIN__;
+    __CV_BEGIN__;
 
     CvPoint2D32f center = {0,0};
     int i, j, k;
@@ -835,7 +835,7 @@ icvCleanFoundConnectedQuads( int quad_count, CvCBQuad **quad_group, CvSize patte
 	// or ones which don't belong to the pattern rectangle. Else go to the end
 	// of the function
     if( quad_count <= count )
-        EXIT;
+        __CV_EXIT__;
 
 
     // Create an array of quadrangle centers
@@ -932,7 +932,7 @@ icvCleanFoundConnectedQuads( int quad_count, CvCBQuad **quad_group, CvSize patte
         centers[min_box_area_index] = centers[quad_count];
     }
 
-    __END__;
+    __CV_END__;
 
     cvReleaseMemStorage( &temp_storage );
     cvFree( &centers );
@@ -2087,7 +2087,7 @@ icvGenerateQuads( CvCBQuad **out_quads, CvCBCorner **out_corners,
 
     CV_FUNCNAME( "icvGenerateQuads" );
 
-    __BEGIN__;
+    __CV_BEGIN__;
 
     CvSeq *src_contour = 0;
     CvSeq *root;
@@ -2240,7 +2240,7 @@ icvGenerateQuads( CvCBQuad **out_quads, CvCBCorner **out_corners,
         quad_count++;
     }
 
-    __END__;
+    __CV_END__;
 
     if( cvGetErrStatus() < 0 )
     {
