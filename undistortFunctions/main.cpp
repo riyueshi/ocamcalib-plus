@@ -11,6 +11,7 @@
 ------------------------------------------------------------------------------*/
 
 #include "ocam_functions.h"
+#include <highgui.h>
 
 int main(int argc, char *argv[])
 {   

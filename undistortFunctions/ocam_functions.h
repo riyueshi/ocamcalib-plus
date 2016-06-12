@@ -5,15 +5,8 @@
    Author: Davide Scaramuzza - email: davide.scaramuzza@ieee.org
 ------------------------------------------------------------------------------*/
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <float.h>
-#include <math.h>
 #include <opencv/cv.h>
-#include <highgui.h>
 
-
-#define CMV_MAX_BUF 1024
 #define MAX_POL_LENGTH 64
 
 struct ocam_model

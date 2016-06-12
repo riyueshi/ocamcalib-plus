@@ -7,6 +7,8 @@
 
 #include "ocam_functions.h"
 
+#define CMV_MAX_BUF 1024
+
 //------------------------------------------------------------------------------
 int get_ocam_model(struct ocam_model *myocam_model, const char *filename)
 {
