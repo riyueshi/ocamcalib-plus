@@ -12,7 +12,7 @@ install(EXPORT ocam-targets DESTINATION lib/cmake/ocam
     NAMESPACE ocam::)
 
 file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/hide/ocam-config.cmake" "
-find_package(OpenCV REQUIRED)
+
 include(\${CMAKE_CURRENT_LIST_DIR}/ocam-targets.cmake)
 ")
 

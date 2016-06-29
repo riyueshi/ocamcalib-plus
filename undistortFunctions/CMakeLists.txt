@@ -21,12 +21,13 @@ target_include_directories(undistortfunctions PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
     $<INSTALL_INTERFACE:include>)
 
-add_executable(example main.cpp)
-set_target_properties(example PROPERTIES DEBUG_POSTFIX d)
-target_link_libraries(example PRIVATE
-    undistortfunctions
-    opencv_imgproc
-    opencv_highgui
-    opencv_imgcodecs
+if (BUILD_TESTING)
+    add_executable(example main.cpp)
+    set_target_properties(example PROPERTIES DEBUG_POSTFIX d)
+    target_link_libraries(example PRIVATE
+        undistortfunctions
+        opencv_imgproc
+        opencv_highgui
+        opencv_imgcodecs
     )
-
+endif()
